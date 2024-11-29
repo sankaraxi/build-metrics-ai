@@ -1,0 +1,1 @@
+export const LOGO = 'https://utfs.io/f/0Gl64F1LqW8AEYUHFTuAUQBoY2VgAKJRDmjhuydXF3wn4f9S'
