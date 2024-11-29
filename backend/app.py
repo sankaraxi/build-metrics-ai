@@ -1,27 +1,29 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify
 import joblib
-import numpy as np
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 model = joblib.load(r"XGB_construct_model.pkl")
 
-@app.route('/')
-def home():
-    return render_template('home.html')
-
-@app.route('/predict', methods=['POST'])
+@app.route('/api/predict', methods=['POST'])
 def predict():
-    if request.method == 'POST':
-        sqft = float(request.form['sqft'])
-        floors = int(request.form['floors'])
-        print(sqft)
-        # Make a prediction using your machine learning model
-        prediction_scientific = model.predict([[sqft, floors]])
+    data = request.json
+    sqft = float(data.get('sqft'))
+    floors = int(data.get('floors'))
 
-        print(prediction_scientific)
-        prediction_values = [float(val) for val in prediction_scientific[0]]
-        print(prediction_values)
-        return render_template('results.html', prediction=prediction_values)
+    prediction_scientific = model.predict([[sqft, floors]])
+    prediction_values = [float(val) for val in prediction_scientific[0]]
+    
+    return jsonify({
+        "cement": round(prediction_values[0], 2),
+        "labor": round(prediction_values[1]),
+        "bricks": round(prediction_values[2]),
+        "iron": round(prediction_values[3], 2),
+        "sand": round(prediction_values[4], 2),
+        "cost": round(prediction_values[5], 2),
+        "days": round(prediction_values[6])
+    })
 
 if __name__ == '__main__':
     app.run(debug=True)
