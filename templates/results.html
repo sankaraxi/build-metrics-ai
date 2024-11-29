@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimation Results</title>
+  <style>
+    body {
+      font-family: 'Fredoka One', sans-serif;
+      background-color: #F7D33A;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+      min-height: 100vh; 
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    .quote {
+      font-size: 80px; 
+      margin-top: -50px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333; 
+    }
+    .image-small {
+      width: 140px;
+      margin-left: -27px;
+    }
+    .text {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      margin-top: auto;
+      background-color: white; 
+      padding: 20px;
+      align-items: center;
+      border-radius: 10px;
+    }
+    .values {
+      padding-top: -30px;
+      font-size: 30px;
+      margin-top: -50px;
+      text-align: center;
+      margin-left: -70px;
+      color: #333;
+    }
+    .bob {
+      margin-bottom: 55px;
+      margin-right: -60px;
+    }
+    .content{
+      margin-top: -120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="quote">
+        <p style="color: #333;">Get set, go!</p> 
+        <img src="../static/images/rocket.gif" alt="Small Image" class="image-small">
+      </div>
+      <p class="values">Here are your anticipated values!</p>
+    </div>
+  </div>
+  <div class="content">
+    <div class='bob'><img src="../static/images/bob.png" alt="Your Image" style="float:right; max-width:40%; " height="600px">
+    </div>
+    <div class="container">
+      
+      <div class="text">
+        <p>Your predicted values are as follows:</p>
+        <ul>
+          <p>Tons of Cement: {{ "{:.2f}".format(prediction[0]) }}</p>
+          <p>Labor Required: {{ prediction[1]|round }}</p>
+          <p>Num Bricks: {{ prediction[2]|round }}</p>
+          <p>Tons of Iron: {{ "{:.2f}".format(prediction[3]) }}</p>
+          <p>Tons of Sand: {{ "{:.2f}".format(prediction[4]) }}</p>
+          <p>Total Cost: {{ "{:.2f}".format(prediction[5]) }}</p>
+          <p>Days: {{ prediction[6]|round }}</p>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
