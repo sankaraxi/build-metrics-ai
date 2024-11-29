@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FORM_IMG from '../assets/form_img.png'
 
 const Form = () => {
 
@@ -34,7 +35,7 @@ const Form = () => {
     };
 
   return (
-    <div className="flex flex-col items-center justify-center h-[450px] bg-gray-100 my-5">
+    <div className="mx-20 px-2 absolute inset-0 top-[720px] flex flex-col items-center justify-center h-[450px] bg-gray-100 my-5">
         {/* Form Heading */}
         <h2 className="text-4xl font-bold text-gray-800 mb-4">The AI Powered Construction Estimator</h2>
         <p className="text-gray-600 text-center mb-6">
@@ -43,9 +44,17 @@ const Form = () => {
         </p>
 
         <form 
-            className="flex flex-col items-center gap-6 justify-center p-5 bg-white shadow-md rounded-md"
+            className="flex flex-col relative items-center gap-6 justify-center p-5 bg-white shadow-md rounded-md"
             onSubmit={handleSubmit}
-        >
+        >   
+        <div className='absolute -top-2 -left-40'>
+            <img
+                src={FORM_IMG}
+                alt="form-img"
+                className="w-64 h-64"
+            />
+
+        </div>
                 
 
             {/* Square Feet Input */}
@@ -61,7 +70,7 @@ const Form = () => {
                     value={formData.sqft} 
                     onChange={handleChange} 
                     required 
-                    className="border border-gray-300 rounded-md p-3 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="border text-black border-gray-300 rounded-md p-3 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
 
@@ -78,7 +87,7 @@ const Form = () => {
                     value={formData.floors} 
                     onChange={handleChange} 
                     required 
-                    className="border border-gray-300 rounded-md p-3 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="border text-black border-gray-300 rounded-md p-3 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
 

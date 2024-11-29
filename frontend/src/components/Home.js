@@ -1,3 +1,4 @@
+import { HOME_BG } from "../utils/constants";
 import Form from "./Form";
 
 
@@ -6,14 +7,15 @@ const Home = () => {
     
 
     return (
-        <div className="mx-20 px-2">
-            <div>
+        <div className="">
+            <div className="relative">
                 <img
-                    src=""
-                    alt=""
+                    src={HOME_BG}
+                    alt="home-bg"
+                    className="w-full h-scrren object-cover mix-blend-plus-lighter  "
                 />
             </div>
-            <div className='flex flex-col items-center justify-center h-[580px] gap-2'>
+            <div className='absolute inset-0 top-24 flex flex-col items-center justify-center h-[580px] gap-2'>
                 <h1 className='text-6xl'>Welcome to <span className='font-extrabold'>Build Metrics</span></h1>
                 <p className='text-2xl'>Your Trusted Partner for Construction Planning</p>
                 <button 

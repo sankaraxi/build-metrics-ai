@@ -4,7 +4,7 @@ import Nav from './Nav'
 
 const Header = () => {
   return (
-    <div className='bg-black xl:py-5'>
+    <div className='fixed w-full bg-black xl:py-5'>
         <div className='mx-2 xl:mx-12 px-4 xl:px-10 bg-gray-400 flex items-center justify-between bg-gradient-to-br from-white rounded-full shadow-md'>
             <div>
                 <img 
