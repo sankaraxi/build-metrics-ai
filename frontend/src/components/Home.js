@@ -17,7 +17,7 @@ const Home = () => {
                 <img
                     src={HOME_BG}
                     alt="home-bg"
-                    className="w-full h-scrren object-cover mix-blend-plus-lighter  "
+                    className="w-full h-scrren object-cover mix-blend-lighten "
                 />
             </div>
             <div className='absolute inset-0 top-24 flex flex-col items-center justify-center h-[580px] gap-2'>

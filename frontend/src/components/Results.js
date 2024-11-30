@@ -14,6 +14,7 @@ import SQFT from '../assets/sqft.png';
 import FLOORS from '../assets/floors.png';
 import DAYS from '../assets/days.png';
 import { HOME_BG } from '../utils/constants';
+import ResultsShimmer from './Shimmer/ResultsShimmer';
 
 const Results = () => {
     const navigate = useNavigate();
@@ -37,7 +38,7 @@ const Results = () => {
 
     if (loading) {
         return (
-            <div>loading ...</div>
+            <ResultsShimmer />
         )
     }
     
@@ -83,9 +84,8 @@ const Results = () => {
                                     </p>
                                 </div>
                             </div>
+                            
                             <div className='flex items-center justify-between w-6/12'>
-                                
-
                                 <div className='w-3/6'>
                                     <img
                                         src={FLOORS}
@@ -99,8 +99,6 @@ const Results = () => {
                                         <CountUp end={floors} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
                                     </p>
                                 </div>
-                                
-                                
                             </div>
                         </div>
 
