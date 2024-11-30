@@ -21,11 +21,6 @@ const Header = () => {
                 <div className='hidden xl:flex'>
                     <Nav />
                 </div>
-                <div>
-                    <span>Dark mode</span>
-                </div>
-
-                
             </div>
         </div>
     </div>
