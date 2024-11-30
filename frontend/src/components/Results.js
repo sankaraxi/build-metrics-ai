@@ -59,7 +59,7 @@ const Results = () => {
                 />
             </div>
             <div className='py-36'>
-                <div className='mx-20 px-2 py-4 bg-white bg-opacity-80 text-black rounded-xl'>
+                <div className='mx-20 p-5 bg-white bg-opacity-80 text-black rounded-xl'>
                     <h2>Here is your estimation report <span>{name}</span></h2>
                     <div className='px-5 w-full'>
                         {/*Row 1*/}
@@ -205,7 +205,7 @@ const Results = () => {
                                 </div>
                                 
                                 <div className='w-3/6'>
-                                    <h1 className='text-3xl'>Tons of Sand</h1>
+                                    <h1 className='text-3xl'>Days Needed</h1>
                                     <p className=''>
                                         <CountUp end={results.days} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
                                     </p>
