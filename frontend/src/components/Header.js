@@ -4,8 +4,8 @@ import Nav from './Nav'
 
 const Header = () => {
   return (
-    <div className='fixed w-full bg-black xl:py-5'>
-        <div className='mx-2 xl:mx-12 px-4 xl:px-10 bg-gray-400 flex items-center justify-between bg-gradient-to-br from-white rounded-full shadow-md'>
+    <div className='fixed w-full z-30 xl:py-5'>
+        <div className='mx-2 z-50 xl:mx-12 px-4 xl:px-10 bg-white flex items-center justify-between bg-opacity-85 rounded-full shadow-md'>
             <div>
                 <img 
                     src={LOGO}

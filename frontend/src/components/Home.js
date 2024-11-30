@@ -1,4 +1,5 @@
 import { HOME_BG } from "../utils/constants";
+import Features from "./Features";
 import Form from "./Form";
 
 
@@ -25,8 +26,7 @@ const Home = () => {
                 </button>
             </div>
             <Form />
-
-            
+            <Features />
         </div>
     );
 };

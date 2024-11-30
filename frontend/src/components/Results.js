@@ -204,14 +204,31 @@ const Results = () => {
                 </div>
             </div>
 
-            <ul>
-                <li>Labor Required: {results.labor}</li>
-                <li>Number of Bricks: {results.bricks}</li>
-                <li>Tons of Iron: {results.iron}</li>
-                <li>Total Cost: {results.cost}</li>
-                <li>Days: {results.days}</li>
-            </ul>
-            <button onClick={() => navigate('/')}>Start Over</button>
+           <div className='flex items-center justify-center w-full'>
+                <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
+                            <img
+                                src={COST}
+                                alt='cost-img'
+                                className='w-[225px] h-[225px] rounded-full'
+                            />
+                        </div>
+                        
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Total Estimated Cost</h1>
+                            <p className=''>
+                            <span className='text-4xl xl:text-6xl font-bold'>₹</span> <CountUp end={results.cost} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
+                        </div>
+                    </div>
+           </div>
+           <div className='flex items-center justify-center'>
+                <button
+                    className='mt-2 bg-gray-400 text-black bg-gradient-to-br from-white text-lg font-semibold py-2 px-4 rounded-lg hover:bg-sky-600 cursor-pointer'
+                    onClick={() => navigate('/')}
+                >Start Over</button>
+           </div>
+            
         </div>
     );
 };

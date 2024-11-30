@@ -124,9 +124,6 @@ const Form = () => {
                 Estimate
             </button>
         </form>
-        <div>
-
-        </div>
     </div>
   )
 }
