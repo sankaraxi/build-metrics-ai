@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import FORM_IMG from '../assets/form_img.png'
 
 const Form = () => {
-
+    const [name, setName] = useState('');
     const [formData, setFormData] = useState({ sqft: '', floors: '' });
     const navigate = useNavigate();
 
@@ -14,7 +14,15 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            navigate('/results');
+            navigate('/results',
+                { state: 
+                    {
+                        name: name, 
+                        sqft: formData.sqft, 
+                        floors: formData.floors
+                    } 
+                }
+            );
             const response = await fetch('https://build-metrics-ai.onrender.com/api/predict', {
                 method: 'POST',
                 headers: {
@@ -56,6 +64,22 @@ const Form = () => {
             />
 
         </div>
+
+            <div className="flex items-center gap-4">
+                <label 
+                    className="w-80 text-right text-xl text-gray-700 font-medium"
+                >
+                   Enter your <span className='font-bold'>Name</span>
+                </label>
+                <input 
+                    type="text" 
+                    name="sqft" 
+                    value={name} 
+                    onChange={(e)=>{setName(e.target.value)}} 
+                    required 
+                    className="border text-black border-gray-300 rounded-md p-3 w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </div>
                 
 
             {/* Square Feet Input */}
@@ -63,7 +87,7 @@ const Form = () => {
                 <label 
                     className="w-80 text-right text-xl text-gray-700 font-medium"
                 >
-                    Number of <span className='font-bold'>Square Feet</span>:
+                    Number of <span className='font-bold'>Square Feet</span>
                 </label>
                 <input 
                     type="text" 
@@ -80,7 +104,7 @@ const Form = () => {
                 <label 
                     className="w-80 text-right text-xl text-gray-700 font-medium"
                 >
-                    Number of <span className='font-bold'>Floors</span>:
+                    Number of <span className='font-bold'>Floors</span>
                 </label>
                 <input 
                     type="text" 
