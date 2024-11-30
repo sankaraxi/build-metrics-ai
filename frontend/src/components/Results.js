@@ -24,7 +24,9 @@ const Results = () => {
     const {name, sqft, floors} = location.state || {};
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const fetchedResults = JSON.parse(localStorage.getItem('results'));
+
 
         if (fetchedResults) {
             setResults(fetchedResults);    
@@ -58,9 +60,10 @@ const Results = () => {
                     className="w-full h-scrren object-cover mix-blend-plus-lighter  "
                 />
             </div>
-            <div className='py-36'>
+            <div className='py-32'>
                 <div className='mx-20 p-5 bg-white bg-opacity-80 text-black rounded-xl'>
-                    <h2>Here is your estimation report <span>{name}</span></h2>
+                    <h1 className='text-center font-extrabold text-5xl'>Build Metrics <span className='text-blue-600'>Estimation</span></h1>
+                    <h2 className='text-center text-4xl pb-3'>Hello, <span className='font-bold'>{name}</span>! Here is your construction estimation report.</h2>
                     <div className='px-5 w-full'>
                         {/*Row 1*/}
                         <div className='flex justify-between w-full'>  
@@ -76,7 +79,7 @@ const Results = () => {
                                 <div className='w-3/6'>
                                     <h1 className='text-3xl'>Number of Square Feet</h1>
                                     <p className=''>
-                                        <CountUp end={sqft} duration={5} delay={2} className="text-4xl xl:text-6xl font-extrabold"/>
+                                        <CountUp end={sqft} duration={4} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
                                     </p>
                                 </div>
                             </div>
@@ -236,7 +239,7 @@ const Results = () => {
                             <button
                                 className='mt-2 bg-gray-400 text-black bg-gradient-to-br from-white text-lg font-semibold py-2 px-4 rounded-lg hover:bg-sky-600 cursor-pointer'
                                 onClick={() => navigate('/')}
-                            >Start Over</button>
+                            >New Estimate</button>
                     </div>
                 </div>
 
