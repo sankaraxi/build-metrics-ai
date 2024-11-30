@@ -1,12 +1,16 @@
+import { useRef } from "react";
 import { HOME_BG } from "../utils/constants";
 import Features from "./Features";
 import Form from "./Form";
 
 
 const Home = () => {
-    
-    
+    const formRef = useRef(null);
 
+    const scrollToForm = () => {
+        formRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    
     return (
         <div className="">
             <div className="relative">
@@ -21,11 +25,11 @@ const Home = () => {
                 <p className='text-2xl'>Your Trusted Partner for Construction Planning</p>
                 <button 
                     className='mt-2 bg-gray-400 text-black bg-gradient-to-br from-white text-lg font-semibold py-2 px-4 rounded-lg hover:bg-sky-600 cursor-pointer' 
-                    onclick="scrollToSection('features')"
+                    onClick={scrollToForm}
                 >Get Started
                 </button>
             </div>
-            <Form />
+            <Form formRef={formRef}/>
             <Features />
         </div>
     );
