@@ -2,7 +2,7 @@ import Features from "./Features";
 
 const About = () => {
     return (
-      <div className="bg-gray-100 min-h-screen flex flex-col items-center px-8 py-16 pt-36">
+      <div className="bg-gray-100 min-h-screen flex flex-col items-center px-8 py-16 pt-32">
         {/* Page Title */}
         <h1 className="text-5xl font-extrabold text-gray-800 mb-8">
           About <span className="text-blue-500">Build Metrics</span>
@@ -51,7 +51,7 @@ const About = () => {
             </li>
           </ul>
         </div>
-        <div className="pb-12">
+        <div className="pb-12 px-20">
             <h2 class="text-2xl font-bold text-black text-center my-8">Why Choose Build Metrics?</h2>
             <div class="features grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-12">
             <div class="feature bg-white shadow-lg rounded-lg p-6 border border-gray-200">
