@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import CountUp from 'react-countup';
 
 //Images
 import CEMENT from '../assets/cement.png';
@@ -50,11 +51,11 @@ const Results = () => {
     return (
         <div className="mx-20 px-2 py-44 bg-white text-black">
             <h2>Here is your estimation report <span>{name}</span></h2>
-            <div className='w-full'>
+            <div className='px-5 w-full'>
                 {/*Row 1*/}
                 <div className='flex justify-between w-full'>  
-                    <div className='flex items-center justify-center w-6/12'>
-                        <div className='w-2/6'>
+                    <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
                             <img
                                 src={SQFT}
                                 alt='sqft-img'
@@ -62,99 +63,142 @@ const Results = () => {
                             />
                         </div>
                         
-                        <div >
+                        <div className='w-3/6'>
                             <h1 className='text-3xl'>Number of Square Feet</h1>
-                            <p className='text-6xl'>{sqft} sqft.</p>
+                            <p className=''>
+                                <CountUp end={sqft} duration={5} delay={2} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
                         </div>
                     </div>
-                    <div className='flex items-center justify-center w-6/12'>
-                        <img
-                            src={FLOORS}
-                            alt='floors-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Number of Floors</h1>
-                            <p>{floors}</p>
+                    <div className='flex items-center justify-between w-6/12'>
+                        
+
+                        <div className='w-3/6'>
+                            <img
+                                src={FLOORS}
+                                alt='floors-img'
+                                className='w-[225px] h-[225px]'
+                            />
                         </div>
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Number of Floors</h1>
+                            <p className=''>
+                                <CountUp end={floors} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
+                        </div>
+                        
+                        
                     </div>
                 </div>
 
                 {/*Row 2*/}
-                <div className='flex justify-between'>
-                    <div className='flex items-center'>
-                        <img
-                            src={CEMENT}
-                            alt='sqft-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Tons of Cement</h1>
-                            <p>{results.cement}</p>
+                <div className='flex justify-between w-full pt-3'>
+                    <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
+                            <img
+                                src={CEMENT}
+                                alt='sqft-img'
+                                className='w-64 h-64'
+                            />
+                        </div>
+                        
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Tons of Cement</h1>
+                            <p className=''>
+                                <CountUp end={results.cement} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
                         </div>
                     </div>
-                    <div className='flex items-center'>
-                        <img
-                            src={SAND}
-                            alt='floors-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Tons of Sand</h1>
-                            <p>{results.sand}</p>
+                    <div className='flex items-center justify-between w-6/12'>
+                    
+                       
+                        <div className='w-3/6'>
+                            <img
+                                src={LABOR}
+                                alt='floors-img'
+                                className='w-64 h-64'
+                            />
                         </div>
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Labor Required</h1>
+                            <p className=''>
+                                <CountUp end={results.labor} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
+                        </div>
+                       
+                        
                     </div>
                 </div>
 
                 {/*Row 3*/}
-                <div className='flex justify-between'>
-                    <div className='flex items-center'>
-                        <img
-                            src={LABOR}
-                            alt='floors-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Labor Required</h1>
-                            <p>{results.labor}</p>
+                <div className='flex justify-between w-full pt-3'>
+                    <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
+                            <img
+                                src={SAND}
+                                alt='floors-img'
+                                className='w-[225px] h-[225px] rounded-full'
+                            />
+                        </div>
+                        
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Tons of Sand</h1>
+                            <p className=''>
+                                <CountUp end={results.sand} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
                         </div>
                     </div>
-                    <div className='flex items-center'>
-                        <img
-                            src={IRON}
-                            alt='sqft-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Tons of Iron</h1>
-                            <p>{results.iron}</p>
+                    <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
+                            <img
+                                src={IRON}
+                                alt='iron-img'
+                                className='w-[225px] h-[225px] rounded-full'
+                            />
+                        </div>
+                        
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Tons of Iron</h1>
+                            <p className=''>
+                                <CountUp end={results.iron} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
                         </div>
                     </div>
                     
                 </div>
                 
                 {/*Row 4*/}
-                <div className='flex justify-between'>
-                    <div className='flex items-center'>
-                        <img
-                            src={BRICKS}
-                            alt='floors-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Number of Bricks</h1>
-                            <p>{results.bricks}</p>
+                <div className='flex justify-between w-full pt-3'>
+                <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
+                            <img
+                                src={BRICKS}
+                                alt='floors-img'
+                                className='w-[225px] h-[225px]'
+                            />
+                        </div>
+                        
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Number of Bricks</h1>
+                            <p className=''>
+                                <CountUp end={results.bricks} duration={5} delay={2} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
                         </div>
                     </div>
-                    <div className='flex items-center'>
-                        <img
-                            src={DAYS}
-                            alt='days-img'
-                            className='w-64 h-64'
-                        />
-                        <div>
-                            <h1>Days</h1>
-                            <p>{results.days}</p>
+                    <div className='flex items-center justify-between w-6/12'>
+                        <div className='w-3/6'>
+                            <img
+                                src={DAYS}
+                                alt='floors-img'
+                                className='w-[225px] h-[225px]'
+                            />
+                        </div>
+                        
+                        <div className='w-3/6'>
+                            <h1 className='text-3xl'>Tons of Sand</h1>
+                            <p className=''>
+                                <CountUp end={results.days} duration={2} delay={1} className="text-4xl xl:text-6xl font-extrabold"/>
+                            </p>
                         </div>
                     </div>
                 </div>
