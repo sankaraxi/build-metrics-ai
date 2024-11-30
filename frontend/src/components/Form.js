@@ -14,6 +14,7 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            navigate('/results');
             const response = await fetch('https://build-metrics-ai.onrender.com/api/predict', {
                 method: 'POST',
                 headers: {
@@ -28,7 +29,7 @@ const Form = () => {
     
             const data = await response.json();
             localStorage.setItem('results', JSON.stringify(data));
-            navigate('/results');
+            
         } catch (error) {
             console.error('Error fetching prediction:', error);
         }
