@@ -4,6 +4,7 @@ import Results from "./components/Results"
 import Home from "./components/Home"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import About from "./components/About"
 const App = () => {
     return (
         <div className="">
@@ -26,6 +27,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/results",
         element: <Results />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ] 
   }
