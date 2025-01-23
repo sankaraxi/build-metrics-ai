@@ -16,8 +16,6 @@ const Nav = () => {
         <Link to='/about'>
             <h1 className='cursor-pointer text-black hover:text-gray-400 font-semibold'>About</h1>
         </Link>
-
-        
     </div>
   )
 }

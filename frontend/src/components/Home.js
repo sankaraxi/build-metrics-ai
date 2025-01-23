@@ -17,10 +17,11 @@ const Home = () => {
                 <img
                     src={HOME_BG}
                     alt="home-bg"
-                    className="w-full h-scrren object-cover mix-blend-lighten "
+                    className="w-full max-md:h-screen object-cover mix-blend-lighten "
                 />
             </div>
-            <div className='absolute inset-0 top-24 flex flex-col items-center justify-center h-[580px] gap-2'>
+            
+            <div className='absolute inset-0  top-24 flex flex-col items-center justify-center h-[580px] gap-2'>
                 <h1 className='text-6xl'>Welcome to <span className='font-extrabold'>Build Metrics</span></h1>
                 <p className='text-2xl'>Your Trusted Partner for Construction Planning</p>
                 <button 

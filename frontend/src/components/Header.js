@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { LOGO } from '../utils/constants'
 import Nav from './Nav'
 import { Link } from 'react-router-dom'
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = () => {
     useEffect(() => {
@@ -13,13 +14,16 @@ const Header = () => {
             <Link to='/'>
                 <img 
                     src={LOGO}
-                    className='w-g0 xl:w-64'
+                    className='w-60 xl:w-64'
                     alt='logo'
                 />
             </Link>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center md:gap-2'>
                 <div className='hidden xl:flex'>
                     <Nav />
+                </div>
+                <div className='block xl:hidden text-black text-5xl'>
+                    <GiHamburgerMenu />
                 </div>
             </div>
         </div>
