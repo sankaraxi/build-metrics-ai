@@ -58,7 +58,7 @@ const Form = ({ formRef }) => {
                 className="flex flex-col relative items-center gap-6 justify-center p-5 bg-white shadow-md rounded-md"
                 onSubmit={handleSubmit}
             >
-                <div className="absolute -top-2 -left-40">
+                <div className="absolute md:-top-2 md:-left-40">
                     <img src={FORM_IMG} alt="form-img" className="w-64 h-64" />
                 </div>
 

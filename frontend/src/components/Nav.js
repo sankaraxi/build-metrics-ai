@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
 
-
-
   return (
     <div className='flex gap-4 text-lg'>
         <Link to='/'>
